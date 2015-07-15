@@ -1,48 +1,10 @@
-//variables
-@import "variab";
-
-//Mixins
-@import "mixins";
-
 @charset "UTF-8";
 
-.align-left 	{text-align: left;}
-.align-center 	{text-align: center;}
-.align-right 	{text-align: right;}
-.align-justify 	{text-align:justify;}
-
-.bold { font-weight: bold; }
-.italic { font-style: italic; }
-.normal { font-weight: normal; }
-.underline { text-decoration:underline; }
+.bold {font-weight: bold;}
+.italic {font-style: italic;}
+.normal {font-weight: normal;}
+.underline {text-decoration:underline;}
 .line-through {text-decoration:line-through;}
-
-#container{.t16}
-
-.t08 { .font-size(8);} 
-.t09 { .font-size(9);} 
-.t10 { .font-size(10);} 
-.t11 { .font-size(11);} 
-.t12 { .font-size(12);} 
-.t13 { .font-size(13);} 
-.t14 { .font-size(14);} 
-.t15 { .font-size(15);} 
-/*Tamaño base*/
-.t16 { .font-size(16);} 
-.t17 { .font-size(17);} 
-.t18 { .font-size(18);} 
-.t19 { .font-size(19);} 
-.t20 { .font-size(20);} 
-.t25 { .font-size(25);} 
-.t30 { .font-size(30);} 
-.t40 { .font-size(40);} 
-.t50 { .font-size(50);} 
-.t60 { .font-size(60);}
-.t70 { .font-size(70);} 
-.t80 { .font-size(80);} 
-.t90 { .font-size(90);} 
-.t100 { .font-size(100);} 
-.t08, .t09, .t10, .t11, .t12, .t13, .t14, .t15, .t16, .t17, .t18, .t19, .t20, .t25, .t30, .t40, .t50, .t60, .t70, .t80, .t90, .t100 {line-height: 1.2em;} 
 
 .blanco {color:@blanco;}
 .gris{color:@gris;}
@@ -62,18 +24,26 @@
 .amarillo {color:@amarillo;}
 .rosa {color:@rosa;}
 
-.impact{font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;}
+a{
+	&:active, &:hover, &:-webkit-any-link, &:-webkit-any-link:active {color: @rojo;}
+	&:hover {text-decoration: none;}
+	img{border:0 none;}
+}
 
 /* imágenes */
-img.centered {
-	display: block;
-	margin: 0 auto;
-}
-img.alignleft {
-	float:left;
-	margin:1em;
-}
-img.alignright {
-	float:right;
-	margin:1em;
+
+img {
+    max-width: 100%;
+    &.centered {
+        display: block;
+        margin: 0 auto;
+    }
+    &.alignleft {
+        float: left;
+        margin: 1em;
+    }
+    &.alignright {
+        float: right;
+        margin: 1em;
+    }
 }
