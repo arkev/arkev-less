@@ -1,6 +1,5 @@
 //básicos--------------------------------------------------------------------------------*/	
 
-.centrar(){margin: 0 auto;display: block;}
 .column(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: @gris, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
   column-width: @colwidth;
   column-count: @colcount;
@@ -22,14 +21,6 @@
 	overflow : hidden; 
 }
 
-//modelo de caja--------------------------------------------------------------------------------*/	
-
-.border(@width: 1px, @type: solid, @color:black){border:@arguments;}   
-.borderRadius(@sizeValue) {
-	@pxValue: @sizeValue;
-	border-radius: ~"@{pxValue}px";
-}
-
 //posición--------------------------------------------------------------------------------*/	
 .absoluta (@top:1px,@left:1px){
 	position:absolute; 
@@ -37,7 +28,6 @@
 	left:@left; 
 }
 
- 
 //Transformaciones--------------------------------------------------------------------------------*/	
 .transition(@property:all,@duration:0.3s,@timing:ease-in-out){
 	transition: @property @duration @timing;
@@ -80,18 +70,29 @@
 }
 
 //Texto--------------------------------------------------------------------------------*/	
-.font-size(@sizeValue) {
+.fontSize(@sizeValue) {
 	@remValue: (@sizeValue / 10);
-	@pxValue: @sizeValue;
-	font-size: ~"@{pxValue}px"; 
-	font-size: ~"@{remValue}rem";
+	@pxValue: (@sizeValue * 1);
+	font-size:~"@{pxValue}px";
+	font-size:~"@{remValue}rem";
+}
+.responsiveFont(@sizeValue, @anchoMaximo) {
+    @vwValue: @sizeValue;
+    @tope: (@anchoMaximo/100)*@sizeValue;
+    font-size: ~ "@{vwValue}vw";
+    @media (min-width: ~ "@{anchoMaximo}px") {
+        font-size: ~ "@{tope}px";
+    }
+}
+.fontWeight(@weight: @regular) {
+	font-weight: @weight;
 }
 .parrafo (@margen:1em, @medida: 1.6rem, @entrelineado: 1.2em){ 
 	margin:@margen;
 	font-size:@medida;
 	line-height:@entrelineado;
 }
-.encabezado (@medida: 1.8rem, @margen:.5em 0, @entrelineado: 1em, @weight:normal) { 
+.encabezado (@medida: 1.8rem, @margen:.5em 0, @entrelineado: 1.5em, @weight:@bold) { 
 	margin:@margen; 
 	font-size:@medida; 
 	line-height:@entrelineado; 

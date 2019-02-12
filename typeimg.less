@@ -1,49 +1,31 @@
 @charset "UTF-8";
 
-.bold {font-weight: bold;}
-.italic {font-style: italic;}
-.normal {font-weight: normal;}
-.underline {text-decoration:underline;}
-.line-through {text-decoration:line-through;}
+.underline() {text-decoration:underline;}
+.line-through() {text-decoration:line-through;}
 
-.blanco {color:@blanco;}
-.gris{color:@gris;}
-.negro {color:@negro;}
-.naranja {color:@naranja;}
-.aqua {color:@aqua;}
-.azul {color:@azul;}
-.fuchsia {color:@fuchsia;}
-.verde {color:@verde;}
-.lima {color:@lima;}
-.marron {color:@marron;}
-.marino {color:@marino;}
-.olivo {color:@olivo;}
-.purpura {color:@purpura;}
-.rojo {color:@rojo;}
-.plata {color:@plata;}
-.amarillo {color:@amarillo;}
-.rosa {color:@rosa;}
-
-a{
-	&:active, &:hover, &:-webkit-any-link, &:-webkit-any-link:active {color: @rojo;}
-	&:hover {text-decoration: none;}
-	img{border:0 none;}
-}
+.blanco() {color:@blanco;}
+.gris(){color:@gris;}
+.negro() {color:@negro;}
+.naranja() {color:@naranja;}
+.aqua() {color:@aqua;}
+.azul() {color:@azul;}
+.fuchsia() {color:@fuchsia;}
+.verde() {color:@verde;}
+.lima() {color:@lima;}
+.marron() {color:@marron;}
+.marino() {color:@marino;}
+.olivo() {color:@olivo;}
+.purpura() {color:@purpura;}
+.rojo() {color:@rojo;}
+.plata() {color:@plata;}
+.amarillo() {color:@amarillo;}
+.rosa() {color:@rosa;}
 
 /* imágenes */
 
 img {
     max-width: 100%;
-    &.centered {
-        display: block;
-        margin: 0 auto;
-    }
-    &.alignleft {
-        float: left;
-        margin: 1em;
-    }
-    &.alignright {
-        float: right;
-        margin: 1em;
-    }
+}
+a{
+	img{border:0 none;}
 }
